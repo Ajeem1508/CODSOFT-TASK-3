@@ -36,7 +36,7 @@ Feel free to customize the calculator according to your preferences:
 
 ## Credits
 
-This project was created by [Ajeem shakh] as part of [Codsoft's Web Development Internship].
+This project was created by [Ajeem shaikh] as part of [Codsoft's Web Development Internship].
 
 ## License
 
