@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Calculator</title>
+
+    <!-- Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- For styling -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        table {
+            border: 2px solid #4caf50;
+            border-collapse: collapse;
+            margin: auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 20px 0;
+            background-color: #4caf50;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        input[type="text"] {
+            padding: 20px 10px;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            border: 2px solid #4caf50;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: right;
+            outline: none;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Create table -->
+    <table id="calcu">
+        <tr>
+            <td colspan="4">
+                <input type="text" id="result" readonly>
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="1" onclick="addToResult('1')"></td>
+            <td><input type="button" value="2" onclick="addToResult('2')"></td>
+            <td><input type="button" value="3" onclick="addToResult('3')"></td>
+            <td><input type="button" value="/" onclick="addToResult('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="addToResult('4')"></td>
+            <td><input type="button" value="5" onclick="addToResult('5')"></td>
+            <td><input type="button" value="6" onclick="addToResult('6')"></td>
+            <td><input type="button" value="*" onclick="addToResult('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="addToResult('7')"></td>
+            <td><input type="button" value="8" onclick="addToResult('8')"></td>
+            <td><input type="button" value="9" onclick="addToResult('9')"></td>
+            <td><input type="button" value="-" onclick="addToResult('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="addToResult('0')"></td>
+            <td><input type="button" value="." onclick="addToResult('.')"></td>
+            <td><input type="button" value="=" onclick="calculate()"></td>
+            <td><input type="button" value="+" onclick="addToResult('+')"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="button" value="c" onclick="clearResult()"></td>
+        </tr>
+    </table>
+
+    <script>
+        function addToResult(value) {
+            document.getElementById('result').value += value;
+        }
+
+        function calculate() {
+            var result = document.getElementById('result').value;
+            var finalResult = eval(result);
+            document.getElementById('result').value = finalResult;
+        }
+
+        function clearResult() {
+            document.getElementById('result').value = '';
+        }
+    </script>
+</body>
+
+</html>
